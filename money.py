@@ -1,6 +1,7 @@
 import tkinter as tk
 from pynput import keyboard
 import time
+from tkinter import font
 
 load_time_default = 6.0
 
@@ -53,19 +54,22 @@ def get_times_and_load_time():
 
 
 root = tk.Tk()
+customFont = font.Font(size=14)
 root.title("艾尔登法环python自动化")
-root.geometry("400x200")  # Set the size of the window
+root.geometry("600x200")  # Set the size of the window
 
 instructions = "1. 在键盘设置中将ctrl设置为战技按键\n2. 点击开始以后,把鼠标焦点三秒内移到艾尔登exe窗口"
-label_instructions = tk.Label(root, text=instructions)
+label_instructions = tk.Label(root, text=instructions, font=customFont)
 label_instructions.pack()
 
-label_times = tk.Label(root, text="请输入刷钱次数:")
+label_times = tk.Label(root, text="请输入刷钱次数:", font=customFont)
 label_times.pack()
 entry_times = tk.Entry(root)
 entry_times.pack()
 
-label_load_time = tk.Label(root, text="请输入读图时间,默认6秒,下面输入框可以留白:")
+label_load_time = tk.Label(
+    root, text="请输入读图时间,默认6秒,下面输入框可以留白:", font=customFont
+)
 label_load_time.pack()
 entry_load_time = tk.Entry(root)
 entry_load_time.pack()
