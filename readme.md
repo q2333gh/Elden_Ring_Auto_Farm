@@ -1,3 +1,4 @@
+
 Script base on blibli user:  
 脚本基于 b站 用户 AMTur: 
 
@@ -19,3 +20,8 @@ pyinstaller --onefile .\money.py
 ```
 # 运行时保持游戏画面在这个状态,Keeping this main windows status.
 ![alt text](image.png)
+
+# Running Example
+![alt text](image-1.png)
+
+![alt text](image-2.png)
