@@ -12,8 +12,15 @@ https://www.bilibili.com/video/BV12x4y1J7LN/?spm_id_from=333.788.video.desc.clic
 
 需要 python,pip
 以及 tkinter ,pynput,pyinstaller
-
-`pyinstaller.exe --onefile .\money.py`
-
+```
+# on windows:
+.\.venv\Scripts\Activate.ps1
+pyinstaller --onefile .\money.py 
+```
 # 运行时保持游戏画面在这个状态,Keeping this main windows status.
 ![alt text](image.png)
+
+# Running Example
+![alt text](image-1.png)
+
+![alt text](image-2.png)
