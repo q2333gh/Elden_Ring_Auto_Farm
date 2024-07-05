@@ -46,12 +46,21 @@ def start_banking(times, load_time):
         time.sleep(float(load_time))
 
 
-def get_times_and_load_time():
+def get_gui_input():
     times = entry_times.get()
     load_time = entry_load_time.get()
     if load_time == "":
         load_time = load_time_default
-    start_banking(times, load_time)
+    thread = threading.Thread(target=start_banking, args=(times, load_time))
+    thread.start()
+
+
+def stop_thread():
+    # Stop the thread
+    if thread.is_alive():
+        # Terminate - may not work if the thread is stuck or not checking
+        # its "stopped" status regularly
+        thread._stop()
 
 
 root = tk.Tk()
@@ -79,7 +88,11 @@ label_load_time.pack()
 entry_load_time = tk.Entry(root)
 entry_load_time.pack()
 
-button = tk.Button(root, text="开始", command=get_times_and_load_time, font=customFont)
+button = tk.Button(root, text="开始", command=get_gui_input, font=customFont)
 button.pack()
+
+stop_button = tk.Button(root, text="停止", command=stop_thread)
+stop_button.pack()
+
 
 root.mainloop()
