@@ -54,7 +54,7 @@ def start_banking(times, load_time):
 
 
 def click_start():
-    global times, load_time, thread,stop_thread_flag
+    global times, load_time, thread, stop_thread_flag
     stop_thread_flag = False
     times = entry_times.get()
     load_time = entry_load_time.get()
@@ -65,7 +65,7 @@ def click_start():
 
 
 def stop_thread():
-    global  stop_thread_flag
+    global stop_thread_flag
     stop_thread_flag = True
 
 
@@ -94,14 +94,16 @@ label_load_time.pack()
 entry_load_time = tk.Entry(root)
 entry_load_time.pack()
 
-button = tk.Button(root, text="开始", command=click_start, font=customFont)
-button.pack()
+start_button = tk.Button(root, text="开始", command=click_start, font=customFont)
+start_button.pack()
 
 
 stop_button = tk.Button(root, text="停止", command=stop_thread, font=customFont)
 stop_button.pack()
 
-info_label = tk.Label(root, text="按下停止以后,脚本还会完整跑完最后一次刷钱请等待十秒", font=customFont)
-info_label.pack(side="left")
+info_label = tk.Label(
+    root, text="按下停止以后,脚本还会完整跑完最后一次刷钱,请等待十秒", font=customFont
+)
+info_label.pack()
 
 root.mainloop()
