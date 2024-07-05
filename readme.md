@@ -16,7 +16,7 @@ https://www.bilibili.com/video/BV12x4y1J7LN/?spm_id_from=333.788.video.desc.clic
 ```
 # on windows:
 .\.venv\Scripts\Activate.ps1
-pyinstaller --onefile .\money.py 
+pyinstaller --onefile -w .\money.py 
 ```
 # 运行时保持游戏画面在这个状态,Keeping this main windows status.
 ![alt text](image.png)
