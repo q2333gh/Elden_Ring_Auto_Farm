@@ -14,3 +14,6 @@ https://www.bilibili.com/video/BV12x4y1J7LN/?spm_id_from=333.788.video.desc.clic
 以及 tkinter ,pynput,pyinstaller
 
 `pyinstaller.exe --onefile .\money.py`
+
+# 运行时保持游戏画面在这个状态,Keeping this main windows status.
+![alt text](image.png)
