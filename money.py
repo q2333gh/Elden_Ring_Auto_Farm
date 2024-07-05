@@ -4,7 +4,12 @@ import time
 from tkinter import font
 import threading
 
+times = 0
+load_time = 0
+thread = None
 load_time_default = 6.0
+
+stop_thread_flag = False
 
 
 def start_banking(times, load_time):
@@ -13,6 +18,8 @@ def start_banking(times, load_time):
 
     control = keyboard.Controller()
     for _ in range(int(times)):
+        if stop_thread_flag:
+            break
         control.press("w")
         time.sleep(3)
         control.release("w")
@@ -46,7 +53,9 @@ def start_banking(times, load_time):
         time.sleep(float(load_time))
 
 
-def get_gui_input():
+def click_start():
+    global times, load_time, thread,stop_thread_flag
+    stop_thread_flag = False
     times = entry_times.get()
     load_time = entry_load_time.get()
     if load_time == "":
@@ -56,11 +65,8 @@ def get_gui_input():
 
 
 def stop_thread():
-    # Stop the thread
-    if thread.is_alive():
-        # Terminate - may not work if the thread is stuck or not checking
-        # its "stopped" status regularly
-        thread._stop()
+    global  stop_thread_flag
+    stop_thread_flag = True
 
 
 root = tk.Tk()
@@ -71,7 +77,7 @@ root.geometry("600x400")  # Set the size of the window
 instructions = """
 1. 在键盘设置中将ctrl设置为战技按键.\n
 2. 装备大范围战技,金粪龟等.\n
-3. 点击开始以后,把鼠标焦点三秒内移到艾尔登exe窗口.
+3. 点击开始以后,把鼠标焦点三秒内移到艾尔登exe窗口并左键点击玩.
 """
 label_instructions = tk.Label(root, text=instructions, font=customFont)
 label_instructions.pack()
@@ -88,11 +94,14 @@ label_load_time.pack()
 entry_load_time = tk.Entry(root)
 entry_load_time.pack()
 
-button = tk.Button(root, text="开始", command=get_gui_input, font=customFont)
+button = tk.Button(root, text="开始", command=click_start, font=customFont)
 button.pack()
 
-stop_button = tk.Button(root, text="停止", command=stop_thread)
+
+stop_button = tk.Button(root, text="停止", command=stop_thread, font=customFont)
 stop_button.pack()
 
+info_label = tk.Label(root, text="按下停止以后,脚本还会完整跑完最后一次刷钱请等待十秒", font=customFont)
+info_label.pack(side="left")
 
 root.mainloop()
