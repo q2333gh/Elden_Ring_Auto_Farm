@@ -57,20 +57,28 @@ def start_banking(times, load_time):
     for _ in range(int(times)):
         if stop_thread_flag:
             break
+        # move
         control.press("w")
         time.sleep(3)
         control.release("w")
         control.press("a")
-        time.sleep(0.8)
+        time.sleep(0.85)
         control.release("a")
         control.press("w")
-        time.sleep(2.25)
+        time.sleep(2)
         control.release("w")
-        # 放战技
+
+        # kill
         control.press(keyboard.Key.ctrl)
-        time.sleep(0.1)
+        time.sleep(1)
         control.release(keyboard.Key.ctrl)
-        time.sleep(2.5)
+        time.sleep(1.5)
+        control.press(keyboard.Key.ctrl)
+        time.sleep(1)
+        control.release(keyboard.Key.ctrl)
+        time.sleep(6)
+
+        # mape
         control.press("g")
         time.sleep(0.1)
         control.release("g")
