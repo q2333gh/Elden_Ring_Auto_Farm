@@ -16,10 +16,10 @@ lang_dict = {
     "cn": {
         "title": "艾尔登法环python自动化刷钱",
         "instructions": """
-0. 将游戏设置为窗口化.\n
-1. 在键盘设置中将ctrl设置为战技按键.\n
-2. 装备大范围战技,金粪龟等.\n
-3. 点击开始以后,把鼠标焦点三秒内移到艾尔登exe窗口并左键点击.
+1. 将游戏设置为窗口化.\n
+2. 确保键盘按键绑定: ctrl->战技按键, g->地图, f-跳跃, e->确认>\n
+3. 装备大范围战技,金粪龟等.\n
+4. 点击开始以后,把鼠标焦点三秒内移到艾尔登exe窗口并左键点击.
 """,
         "times": "请输入刷钱次数:",
         "load_time": "请输入读图时间,默认6秒,下面输入框可以留白:",
@@ -31,16 +31,16 @@ lang_dict = {
     "en": {
         "title": "Elden Ring Python Automation for Money Farming",
         "instructions": """
-0. Set game in windwow mode.\n        
-1. Set ctrl as the combat skill key in the keyboard settings.\n
-2. Equip large-scale combat skills, golden dung beetle, etc.\n
-3. After clicking start, move the mouse focus to the Elden Ring exe window within three seconds \n and leftclick window.
+1. Set the game to windowed mode.\n
+2. Ensure keyboard key bindings: ctrl->combat skill key, g->map, f->jump, e->confirm>\n
+3. Equip wide-range combat skills, golden dung beetle, etc.\n
+4. After clicking start, move the mouse focus to the Elden Ring exe window within three seconds and left-click.
 """,
         "times": "Please enter the number of times for money farming:",
-        "load_time": "Please enter the loading time, default is 6 seconds, the following input box can be left blank:",
+        "load_time": "Please enter the loading time, default is 6 seconds, you can leave the following input box blank:",
         "start": "Start",
         "stop": "Stop",
-        "info": "After pressing stop, the script will still run the last money farming in full, please wait ten seconds",
+        "info": "After pressing stop, the script will still complete the last money farming run, please wait for ten seconds",
         "change_lang": "English / 中文",
     },
 }
@@ -78,7 +78,7 @@ def start_banking(times, load_time):
         control.release(keyboard.Key.ctrl)
         time.sleep(6)
 
-        # mape
+        # map
         control.press("g")
         time.sleep(0.1)
         control.release("g")
