@@ -17,7 +17,7 @@ lang_dict = {
         "title": "艾尔登法环python自动化刷钱",
         "instructions": """
 1. 将游戏设置为窗口化.\n
-2. 确保键盘按键绑定: ctrl->战技按键, g->地图, f-跳跃, e->确认\n
+2. 确保键盘按键绑定: ctrl->战技按键, g->地图, e->确认\n
 3. 装备大范围战技,金粪龟等.\n
 4. 点击开始以后,把鼠标焦点三秒内移到艾尔登exe窗口并左键点击.
 """,
@@ -32,7 +32,7 @@ lang_dict = {
         "title": "Elden Ring Python Automation for Money Farming",
         "instructions": """
 1. Set the game to windowed mode.\n
-2. Ensure keyboard key bindings: ctrl->combat skill key, g->map, f->jump, e->confirm\n
+2. Ensure keyboard key bindings: ctrl->combat skill key, g->map, e->confirm\n
 3. Equip wide-range combat skills, golden dung beetle, etc.\n
 4. After clicking start, move the mouse focus to the Elden Ring exe window within three seconds and left-click.
 """,

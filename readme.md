@@ -6,8 +6,8 @@ https://www.bilibili.com/video/BV12x4y1J7LN/?spm_id_from=333.788.video.desc.clic
 # 直接下载 Downlaod Directly 
 [点击下载脚本程序: Click to download page](./dist/money.exe)
 
-
-
+TODO 不同用户的键位绑定不同. 可以设置默认值和用户输入框绑定按键.
+我是手柄玩家就没测试到这个问题.
 
 # 自行构建: Build By Yourself
 
